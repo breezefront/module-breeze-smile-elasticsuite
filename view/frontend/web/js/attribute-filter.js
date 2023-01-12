@@ -44,7 +44,7 @@ define([
             if (this.items.length > 2) {
                 examples.push('...');
             }
-            this.searchPlaceholder = $('<div/>').html($.mage.__('Search (%s)').replace('%s', examples.join(', '))).text();
+            this.searchPlaceholder = $('<div>').html($.mage.__('Search (%s)').replace('%s', examples.join(', '))).text();
         },
 
         /**
