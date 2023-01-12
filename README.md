@@ -1,4 +1,4 @@
-# BreezeSmileElasticsuite
+# Smile Elasticsuite Integration
 
 ## Installation
 
