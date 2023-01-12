@@ -1,5 +1,44 @@
 & when (@critical) {
+    .block.filter {
+        .filter-options {
+            a:has(input) {
+                .count {
+                    margin: 0;
+                }
+            }
+        }
+        .field.search {
+            &:extend(.breeze-text-sm);
+            margin-bottom: @2;
+        }
+        .actions {
+            &:extend(.breeze-text-sm);
+            margin-top: @1;
+            a {
+                &:extend(.breeze-link all);
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 & when not (@critical) {
+    .block.filter {
+        a:has(input) {
+            &:hover {
+                text-decoration: none;
+                label span:first-child {
+                    text-decoration: underline;
+                }
+            }
+            label {
+                cursor: pointer;
+            }
+        }
+        .no-results-message {
+            &:extend(.breeze-text-sm);
+            color: @muted__color;
+            padding: 0 @1;
+        }
+    }
 }
