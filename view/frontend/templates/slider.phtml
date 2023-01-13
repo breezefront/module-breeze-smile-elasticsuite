@@ -1,0 +1,40 @@
+<?php
+
+$config = json_decode($block->getJsonConfig());
+$rate = $config->rate ?: 1;
+$min = floor($config->minValue * $rate);
+$max = round($config->maxValue * $rate);
+$from = floor(($config->currentValue?->from ?: $config->minValue) * $rate);
+$to = round(($config->currentValue?->to ?: $config->maxValue) * $rate);
+
+?>
+
+<div class="range-inputs" data-role="<?= $block->getDataRole(); ?>">
+    <div class="labels">
+        <div data-role="from-label"><?= $from ?></div>
+        <div data-role="to-label"><?= $to ?></div>
+    </div>
+
+    <range-slider min="<?= $min ?>" max="<?= $max ?>" value="<?= $from . '-' . $to ?>">
+        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $from ?>"/>
+        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $to ?>"/>
+        <input class="filler" disabled type="range"/>
+    </range-slider>
+
+    <div class="actions-toolbar">
+        <div data-role="message-box"></div>
+        <div class="actions-primary">
+            <a class="action primary small" data-role="apply-range">
+                <span><?= $block->escapeHtml(__('OK')) ?></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "[data-role=<?= $block->getDataRole() ?>]": {
+            "rangeSlider": <?= $block->getJsonConfig() ?>
+        }
+    }
+</script>

@@ -18,6 +18,20 @@
                 cursor: pointer;
             }
         }
+
+        .range-inputs {
+            .labels {
+                display: flex;
+                flex-wrap: wrap;
+                gap: @2;
+                [data-role="to-label"] {
+                    .margin-left(auto);
+                }
+            }
+            .actions-toolbar {
+                justify-content: space-between;
+            }
+        }
     }
 }
 
@@ -38,6 +52,17 @@
             &:extend(.breeze-text-sm);
             color: @muted__color;
             padding: 0 @1;
+        }
+
+        .range-inputs {
+            .actions-toolbar {
+                a {
+                    cursor: pointer;
+                }
+                .empty + .actions-primary {
+                    display: none;
+                }
+            }
         }
     }
 }
