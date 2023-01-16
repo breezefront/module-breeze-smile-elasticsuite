@@ -1,0 +1,17 @@
+@critical: unsure;
+
+@import '_range-slider.less';
+
+& when (@media-common = true) {
+    .range-inputs {
+        .actions-toolbar {
+            display: flex;
+            align-items: center;
+            margin-top: 1rem;
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

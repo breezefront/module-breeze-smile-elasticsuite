@@ -1,0 +1,34 @@
+& when (@media-common = true) {
+& when (@critical = unsure), (@critical) {
+    .block.filter {
+        .range-inputs {
+            .labels {
+                display: flex;
+                flex-wrap: wrap;
+                gap: .25rem;
+                [data-role="to-label"] {
+                    .margin-left(auto);
+                }
+            }
+            .actions-toolbar {
+                justify-content: space-between;
+            }
+        }
+    }
+}
+}
+
+& when (@media-common = true) {
+& when (@critical = unsure), (@critical = false) {
+    .range-inputs {
+        .actions-toolbar {
+            a {
+                cursor: pointer;
+            }
+            .empty + .actions-primary {
+                display: none;
+            }
+        }
+    }
+}
+}
