@@ -1,0 +1,52 @@
+.smile-elasticsuite-autocomplete-result {
+    dd {
+        &:extend(.breeze-dropdown-item all);
+    }
+}
+
+& when not (@critical) {
+    .minisearch {
+        .actions {
+            .loading-mask {
+                --spinner-size: @4;
+                justify-content: flex-end;
+                .padding-right(@10);
+            }
+        }
+    }
+    .smile-elasticsuite-autocomplete-result {
+        dt {
+            .lib-css(padding, @dropdown-item__padding);
+        }
+        dd {
+            display: flex;
+            gap: @1;
+        }
+        .clear {
+            display: none;
+        }
+
+        dd,
+        .price-box,
+        .price-label,
+        .category-mini-crumb,
+        .product-attribute-label {
+            .breeze-text-sm();
+        }
+
+        .item-type-product {
+            gap: @2;
+        }
+        .product-image-box {
+            flex-shrink: 0;
+            margin: @1 0;
+        }
+        .category-mini-crumb {
+            font-style: italic;
+            color: @muted__color;
+        }
+        .product-attribute-label {
+            color: @muted__color;
+        }
+    }
+}

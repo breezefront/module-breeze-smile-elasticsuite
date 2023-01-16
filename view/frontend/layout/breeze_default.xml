@@ -23,6 +23,12 @@
                                     <param name="module">Smile_ElasticsuiteCatalog</param>
                                 </item>
                             </item>
+                            <item name="smileEs.quickSearch" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeSmileElasticsuite/js/quick-search</item>
+                                <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
+                                    <param name="module">Smile_ElasticsuiteCore</param>
+                                </item>
+                            </item>
                         </item>
                     </item>
                 </argument>
@@ -31,6 +37,10 @@
 
         <referenceContainer name="breeze.container">
             <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::attribute-filter.html"/>
+            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCore::autocomplete/term.html"/>
+            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::autocomplete/product.html"/>
+            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::autocomplete/category.html"/>
+            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::autocomplete/product-attribute.html"/>
         </referenceContainer>
     </body>
 </page>
