@@ -4,8 +4,16 @@ $config = json_decode($block->getJsonConfig());
 $rate = $config->rate ?: 1;
 $min = floor($config->minValue * $rate);
 $max = round($config->maxValue * $rate);
-$from = floor(($config->currentValue?->from ?: $config->minValue) * $rate);
-$to = round(($config->currentValue?->to ?: $config->maxValue) * $rate);
+$from = $min;
+$to = $max;
+
+if ($config->currentValue && $config->currentValue->from) {
+    $from = floor($config->currentValue->from * $rate);
+}
+
+if ($config->currentValue && $config->currentValue->to) {
+    $to = round($config->currentValue->to * $rate);
+}
 
 ?>
 
