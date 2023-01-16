@@ -21,6 +21,7 @@ define([
             this.autoComplete.on('keydown.smileEs', this.options.responseFieldElements, (event) => {
                 if (event.key === 'Enter') {
                     event.preventDefault();
+                    event.stopPropagation();
                     this.submitSelectedItem();
                 }
             });
