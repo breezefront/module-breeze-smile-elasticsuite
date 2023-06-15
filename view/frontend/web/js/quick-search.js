@@ -100,7 +100,9 @@ define([
                 id = this.options.templates[item.type][template];
 
             if (!this.templateCache[key] && id) {
-                this.templateCache[key] = _.template($(document.getElementById(id + '.html')).html());
+                this.templateCache[key] = _.template(
+                    document.getElementById(`${id}.html`)?.innerHTML || ''
+                );
             }
 
             return this.templateCache[key];
