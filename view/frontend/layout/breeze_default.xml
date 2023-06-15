@@ -41,6 +41,7 @@
             <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::autocomplete/product.html"/>
             <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::autocomplete/category.html"/>
             <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCatalog::autocomplete/product-attribute.html"/>
+            <block class="Swissup\Breeze\Block\HtmlTemplate" template="Smile_ElasticsuiteCms::autocomplete/cms.html"/>
         </referenceContainer>
     </body>
 </page>
