@@ -1,7 +1,7 @@
 <?php
 
 $config = json_decode($block->getJsonConfig());
-$rate = $config->rate ?: 1;
+$rate = $config->rate ?? 1;
 $min = floor($config->minValue * $rate);
 $max = round($config->maxValue * $rate);
 $from = $min;
