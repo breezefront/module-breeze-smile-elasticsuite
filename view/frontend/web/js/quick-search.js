@@ -123,7 +123,7 @@ define([
                     current = match.groups.type;
 
                 if (prev && prev !== current) {
-                    collection.wrapAll('<dl role="listbox" class="autocomplete-list"></dl>')
+                    collection.wrapAll(`<dl role="listbox" class="autocomplete-list autocomplete-list-${prev}"></dl>`)
                     collection = $();
                 }
 
@@ -133,7 +133,7 @@ define([
             });
 
             if (collection.length) {
-                collection.wrapAll('<dl role="listbox" class="autocomplete-list"></dl>')
+                collection.wrapAll(`<dl role="listbox" class="autocomplete-list autocomplete-list-${prev}"></dl>`)
             }
         }
     });
