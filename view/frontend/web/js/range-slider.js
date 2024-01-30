@@ -10,8 +10,4 @@
             });
         }
     });
-
-    $(document).on('breeze:mount:rangeSlider', (e, data) => {
-        $(data.el).rangeSlider(data.settings);
-    });
 }());
