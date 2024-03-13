@@ -31,6 +31,15 @@
                                     <param name="module">Smile_ElasticsuiteCore</param>
                                 </item>
                             </item>
+                            <item name="Smile_ElasticsuiteTracker/js/user-consent" xsi:type="array">
+                                <item name="path" xsi:type="string">Swissup_BreezeSmileElasticsuite/js/user-consent</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="parent" xsi:type="string">Smile_ElasticsuiteTracker/js/user-consent</item>
+                                </item>
+                                <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
+                                    <param name="module">Smile_ElasticsuiteTracker</param>
+                                </item>
+                            </item>
                         </item>
                     </item>
                 </argument>
