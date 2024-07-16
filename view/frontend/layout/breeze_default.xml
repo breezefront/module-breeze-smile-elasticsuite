@@ -30,6 +30,9 @@
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Smile_ElasticsuiteCore</param>
                                 </item>
+                                <item name="mixins" xsi:type="array">
+                                    <item name="quickSearch" xsi:type="string">quickSearch</item>
+                                </item>
                             </item>
                             <item name="Smile_ElasticsuiteTracker/js/user-consent" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeSmileElasticsuite/js/user-consent</item>
