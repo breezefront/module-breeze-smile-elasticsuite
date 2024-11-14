@@ -5,7 +5,12 @@ define([
 ], function ($, _, priceUtil) {
     'use strict';
 
-    $.widget('smileEs.quickSearch', 'quickSearch', {
+    $.mixin('quickSearch', {
+        component: false
+    });
+
+    $.widget('smileEsQuickSearch', 'quickSearch', {
+        component: 'quickSearch',
         options: {
             minSearchLength: 2,
             dropdown: '<div></div>',

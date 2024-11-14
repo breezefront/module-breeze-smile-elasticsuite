@@ -27,6 +27,12 @@
                             </item>
                             <item name="smileEs.quickSearch" xsi:type="array">
                                 <item name="path" xsi:type="string">Swissup_BreezeSmileElasticsuite/js/quick-search</item>
+                                <item name="import" xsi:type="array">
+                                    <item name="priceUtils" xsi:type="string">Magento_Catalog/js/price-utils</item>
+                                </item>
+                                <item name="mixins" xsi:type="array">
+                                    <item name="quickSearch" xsi:type="string">quickSearch</item>
+                                </item>
                                 <item name="enabled" xsi:type="helper" helper="Swissup\Breeze\Helper\Config::isModuleEnabled">
                                     <param name="module">Smile_ElasticsuiteCore</param>
                                 </item>
