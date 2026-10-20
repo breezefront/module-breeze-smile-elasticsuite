@@ -24,8 +24,8 @@ if ($config->currentValue && $config->currentValue->to) {
     </div>
 
     <range-slider min="<?= $min ?>" max="<?= $max ?>" value="<?= $from . '-' . $to ?>">
-        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $from ?>"/>
-        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $to ?>"/>
+        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $from ?>" aria-label="<?= $block->escapeHtmlAttr(__('From')) ?>"/>
+        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $to ?>" aria-label="<?= $block->escapeHtmlAttr(__('To')) ?>"/>
         <input class="filler" disabled type="range"/>
     </range-slider>
 
