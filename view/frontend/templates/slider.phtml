@@ -1,4 +1,8 @@
 <?php
+/**
+ * @var \Magento\Framework\View\Element\Template $block
+ * @var \Magento\Framework\Escaper $escaper
+ */
 
 $config = json_decode($block->getJsonConfig());
 $rate = $config->rate ?? 1;
@@ -17,15 +21,27 @@ if ($config->currentValue && $config->currentValue->to) {
 
 ?>
 
-<div class="range-inputs" data-role="<?= $block->getDataRole(); ?>">
+<div class="range-inputs" data-role="<?= $escaper->escapeHtmlAttr($block->getDataRole()) ?>">
     <div class="labels">
-        <div data-role="from-label"><?= $from ?></div>
-        <div data-role="to-label"><?= $to ?></div>
+        <div data-role="from-label"><?= /* @noEscape */ $from ?></div>
+        <div data-role="to-label"><?= /* @noEscape */ $to ?></div>
     </div>
 
-    <range-slider min="<?= $min ?>" max="<?= $max ?>" value="<?= $from . '-' . $to ?>">
-        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $from ?>" aria-label="<?= $block->escapeHtmlAttr(__('From')) ?>"/>
-        <input class="range" type="range" min="<?= $min ?>" max="<?= $max ?>" value="<?= $to ?>" aria-label="<?= $block->escapeHtmlAttr(__('To')) ?>"/>
+    <range-slider min="<?= /* @noEscape */ $min ?>"
+                  max="<?= /* @noEscape */ $max ?>"
+                  value="<?= /* @noEscape */ $from . '-' . $to ?>">
+        <input class="range"
+               type="range"
+               min="<?= /* @noEscape */ $min ?>"
+               max="<?= /* @noEscape */ $max ?>"
+               value="<?= /* @noEscape */ $from ?>"
+               aria-label="<?= $escaper->escapeHtmlAttr(__('From')) ?>"/>
+        <input class="range"
+               type="range"
+               min="<?= /* @noEscape */ $min ?>"
+               max="<?= /* @noEscape */ $max ?>"
+               value="<?= /* @noEscape */ $to ?>"
+               aria-label="<?= $escaper->escapeHtmlAttr(__('To')) ?>"/>
         <input class="filler" disabled type="range"/>
     </range-slider>
 
@@ -33,7 +49,7 @@ if ($config->currentValue && $config->currentValue->to) {
         <div data-role="message-box"></div>
         <div class="actions-primary">
             <a class="action primary small" data-role="apply-range">
-                <span><?= $block->escapeHtml(__('OK')) ?></span>
+                <span><?= $escaper->escapeHtml(__('OK')) ?></span>
             </a>
         </div>
     </div>
@@ -41,8 +57,8 @@ if ($config->currentValue && $config->currentValue->to) {
 
 <script type="text/x-magento-init">
     {
-        "[data-role=<?= $block->getDataRole() ?>]": {
-            "rangeSlider": <?= $block->getJsonConfig() ?>
+        "[data-role=<?= $escaper->escapeJs($block->getDataRole()) ?>]": {
+            "rangeSlider": <?= /* @noEscape */ $block->getJsonConfig() ?>
         }
     }
 </script>
